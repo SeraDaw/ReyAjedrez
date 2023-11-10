@@ -2,15 +2,15 @@ package org.iesalandalus.programacion.reyajedrez;
 
 public enum Color { BLANCO("Blanco"), NEGRO( "Negro");
 
-    private String mostrarColor;
+    private String cadenaAMostrar;
 
-    private Color (String mostrarColor) {
-        this.mostrarColor=mostrarColor;
+    private Color (String cadenaAMostrar) {
+        this.cadenaAMostrar=cadenaAMostrar;
     }
 
     @Override
     public String toString() {
-        return mostrarColor;
+        return cadenaAMostrar;
     }
 }
 
