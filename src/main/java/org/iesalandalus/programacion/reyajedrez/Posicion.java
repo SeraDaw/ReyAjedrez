@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reyajedrez;
 
+import java.util.Objects;
+
 public class Posicion {
 
     private int fila;
@@ -43,5 +45,26 @@ public class Posicion {
         }
 
         this.fila = fila;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Posicion posicion = (Posicion) o;
+        return fila == posicion.fila && columna == posicion.columna;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fila, columna);
+    }
+
+    @Override
+    public String toString() {
+        return "Posicion{" +
+                "fila=" + fila +
+                ", columna=" + columna +
+                '}';
     }
 }
