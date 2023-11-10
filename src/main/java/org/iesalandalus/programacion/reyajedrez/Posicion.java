@@ -5,12 +5,17 @@ public class Posicion {
     private int fila;
     private char columna;
 
-    public Posicion ( int fila, char columna){
+
+    public Posicion (int fila, char columna) {
         setFila(fila);
         setColumna(columna);
     }
 
+    public Posicion (Posicion posicion){
+        setFila(posicion.getFila());
+        setColumna(posicion.getColumna());
 
+    }
 
 
     public int getFila() {
