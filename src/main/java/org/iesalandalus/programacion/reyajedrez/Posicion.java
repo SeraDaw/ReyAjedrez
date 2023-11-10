@@ -29,10 +29,7 @@ public class Posicion {
     }
 
     public void setColumna(char columna) {
-        if (columna != 'a' || columna != 'b' || columna != 'c' ||
-                columna != 'd' || columna != 'e' || columna != 'f' || columna != 'g' ||
-                columna != 'h' || columna != 'A' || columna != 'B' || columna != 'C' ||
-                columna != 'D' || columna != 'F' || columna != 'G' || columna != 'H' ) {
+        if (columna < 'a' || columna > 'h') {
             throw new IllegalArgumentException();
         }
 
@@ -63,8 +60,8 @@ public class Posicion {
     @Override
     public String toString() {
         return "Posicion{" +
-                "fila=" + fila +
-                ", columna=" + columna +
+                "fila=valorFila" + fila +
+                ", columna=valorColumna" + columna +
                 '}';
     }
 }
