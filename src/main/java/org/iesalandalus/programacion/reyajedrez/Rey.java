@@ -6,6 +6,21 @@ public class Rey {
     private Posicion posicion;
     private int totalMovimientos;
 
+     public Rey(){
+        setColor(Color.BLANCO);
+        setPosicion(new posicion (1,'e'));
+     }
+
+     public Rey (Color color){
+        if (color.equals(color.BLANCO)){
+                setPosicion(new posicion (1,'e'));
+        }else {
+            setPosicion(new posicion (8,'e'));
+        }
+     }
+
+
+
 
     public Color getColor() {
         return color;
