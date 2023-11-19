@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reyajedrez;
 
+import org.iesalandalus.programacion.utilidades.Entrada;
+
 public class Consola {
 
     private Consola () {
@@ -14,4 +16,15 @@ public class Consola {
         System.out.println("4. Salir.");
 
     }
+
+    public static void elegirOpcionMenu () {
+        int opcion;
+
+        do {
+            System.out.println("Elige una opción:");
+            opcion= Entrada.entero();
+        } while (opcion<1 || opcion>4);
+    }
+
+
 }
