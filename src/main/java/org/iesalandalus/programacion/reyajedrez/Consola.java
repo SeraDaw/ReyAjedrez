@@ -115,4 +115,8 @@ public class Consola {
         }
         return direccion;
     }
+
+    public static void despedirse () {
+        System.out.println("Adios.");
+    }
 }
