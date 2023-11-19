@@ -52,17 +52,67 @@ public class Consola {
 
     public static void mostrarDirecciones () {
 
-        System.out.println("Norte");
-        System.out.println("Noreste");
-        System.out.println("Este");
-        System.out.println("Sureste");
-        System.out.println("Sur");
-        System.out.println("Suroeste");
-        System.out.println("Oeste");
-        System.out.println("Noroeste");
-        System.out.println("Enroque corto");
-        System.out.println("Enroque largo");
+        System.out.println("1. Norte");
+        System.out.println("2. Noreste");
+        System.out.println("3. Este");
+        System.out.println("4. Sureste");
+        System.out.println("5. Sur");
+        System.out.println("6. Suroeste");
+        System.out.println("7. Oeste");
+        System.out.println("8. Noroeste");
+        System.out.println("9. Enroque corto");
+        System.out.println("10. Enroque largo");
     }
 
+    public static Direccion elegirDireccion () {
+        Direccion direccion=null;
+        int opcion;
 
+        do {
+            System.out.println("Elige una opcion del 1 al 8:");
+            opcion=Entrada.entero();
+        }while (opcion<1 || opcion>8);
+
+        switch (opcion) {
+            case 1:
+                direccion=Direccion.NORTE;
+                break;
+
+            case 2:
+                direccion=Direccion.NOROESTE;
+                break;
+
+            case 3:
+                direccion=Direccion.ESTE;
+                break;
+
+            case 4:
+                direccion=Direccion.SURESTE;
+                break;
+
+            case 5:
+                direccion=Direccion.SUR;
+                break;
+
+            case 6:
+                direccion=Direccion.SUROESTE;
+                break;
+
+            case 7:
+                direccion=Direccion.OESTE;
+                break;
+            case 8:
+                direccion=Direccion.NOROESTE;
+                break;
+
+            case 9:
+                direccion=Direccion.ENROQUE_CORTO;
+                break;
+
+            case 10:
+                direccion=Direccion.ENROQUE_LARGO;
+                break;
+        }
+        return direccion;
+    }
 }
