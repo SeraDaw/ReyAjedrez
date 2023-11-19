@@ -17,18 +17,23 @@ public class Consola {
 
     }
 
-    public static void elegirOpcionMenu () {
+    public static int elegirOpcionMenu () {
         int opcion;
 
         do {
             System.out.println("Elige una opción:");
             opcion= Entrada.entero();
         } while (opcion<1 || opcion>4);
+
+        return opcion;
     }
 
-    public static void elegirColor () {
+
+
+    public static Color elegirColor () {
 
         char colorElegido;
+        Color opcion=null;
 
         do {
             System.out.println("Elige un color (B/N):");
@@ -36,5 +41,28 @@ public class Consola {
 
         }while (colorElegido!= 'B' || colorElegido!= 'b' || colorElegido!='A' || colorElegido!= 'a');
 
+        if (colorElegido == 'B' || colorElegido== 'b'){
+            opcion=Color.BLANCO;
+        } else {
+            opcion=Color.NEGRO;
+        }
+
+        return opcion;
     }
+
+    public static void mostrarDirecciones () {
+
+        System.out.println("Norte");
+        System.out.println("Noreste");
+        System.out.println("Este");
+        System.out.println("Sureste");
+        System.out.println("Sur");
+        System.out.println("Suroeste");
+        System.out.println("Oeste");
+        System.out.println("Noroeste");
+        System.out.println("Enroque corto");
+        System.out.println("Enroque largo");
+    }
+
+
 }
