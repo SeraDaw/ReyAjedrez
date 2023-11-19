@@ -26,5 +26,15 @@ public class Consola {
         } while (opcion<1 || opcion>4);
     }
 
+    public static void elegirColor () {
 
+        char colorElegido;
+
+        do {
+            System.out.println("Elige un color (B/N):");
+            colorElegido=Entrada.caracter();
+
+        }while (colorElegido!= 'B' || colorElegido!= 'b' || colorElegido!='A' || colorElegido!= 'a');
+
+    }
 }
