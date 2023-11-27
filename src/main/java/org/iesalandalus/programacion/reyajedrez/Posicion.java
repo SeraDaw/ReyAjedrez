@@ -30,7 +30,7 @@ public class Posicion {
 
     public void setColumna(char columna) {
         if (columna < 'a' || columna > 'h') {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("ERROR: La columna no es valida.");
         }
 
         this.columna = columna;
@@ -59,9 +59,8 @@ public class Posicion {
 
     @Override
     public String toString() {
-        return "Posicion{" +
-                "fila=valorFila" + fila +
-                ", columna=valorColumna" + columna +
-                '}';
+        return "En la posicion: " +
+                "(fila " + fila +
+                ", columna " + columna + "). ";
     }
 }

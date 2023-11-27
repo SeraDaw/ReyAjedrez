@@ -15,6 +15,7 @@ public class Consola {
         System.out.println("3. Mover");
         System.out.println("4. Salir.");
 
+
     }
 
     public static int elegirOpcionMenu () {
@@ -30,20 +31,22 @@ public class Consola {
 
 
 
+
+
     public static Color elegirColor () {
 
-        char colorElegido;
+        char colorRey;
         Color opcion=null;
 
         do {
             System.out.println("Elige un color (B/N):");
-            colorElegido=Entrada.caracter();
+            colorRey=Entrada.caracter();
 
-        }while (colorElegido!= 'B' || colorElegido!= 'b' || colorElegido!='A' || colorElegido!= 'a');
+        }while (colorRey != 'B' && colorRey != 'N');
 
-        if (colorElegido == 'B' || colorElegido== 'b'){
+        if (colorRey == 'B') {
             opcion=Color.BLANCO;
-        } else {
+        } else  {
             opcion=Color.NEGRO;
         }
 
@@ -69,9 +72,9 @@ public class Consola {
         int opcion;
 
         do {
-            System.out.println("Elige una opcion del 1 al 8:");
+            System.out.println("Elige una opcion del 1 al 10:");
             opcion=Entrada.entero();
-        }while (opcion<1 || opcion>8);
+        }while (opcion<1 || opcion>10);
 
         switch (opcion) {
             case 1:
@@ -117,6 +120,6 @@ public class Consola {
     }
 
     public static void despedirse () {
-        System.out.println("Adios.");
+        System.out.println("Hasta pronto.");
     }
 }
