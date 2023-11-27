@@ -1,13 +1,27 @@
 package org.iesalandalus.programacion.reyajedrez;
 
+import org.iesalandalus.programacion.utilidades.Entrada;
+
+import javax.naming.OperationNotSupportedException;
+
 public class MainApp {
     public static void main(String[] args) {
+            int opcion;
 
+            do {
+                Consola.mostrarMenu();
+                opcion=Consola.elegirOpcionMenu();
+                ejecutarOpcion(opcion);
+                mostrarRey();
+                System.out.println("===================");
+            }while (opcion!=4);
 
 
     }
 
     private static Rey rey;
+
+
 
     private static void ejecutarOpcion (int opcion) {
 
@@ -26,7 +40,8 @@ public class MainApp {
                 break;
 
             case 4:
-                despedirse();
+                Consola.despedirse();
+                break;
 
         }
     }
@@ -35,6 +50,37 @@ public class MainApp {
 
         rey = new Rey();
     }
+
+    private static void crearReyColor () {
+        rey = new Rey(Consola.elegirColor());
+    }
+
+    private static void mover() {
+
+        Direccion direccion;
+
+        Consola.mostrarDirecciones();
+
+        System.out.println("¿Que dirección quieres tomar?");
+        direccion = Consola.elegirDireccion();
+
+
+        try {
+            rey.mover(direccion);
+        }
+          catch (OperationNotSupportedException e) {
+
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    private static void mostrarRey ()  {
+        System.out.println(rey.toString());
+    }
+
+
+
 
 
 }
